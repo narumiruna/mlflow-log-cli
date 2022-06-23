@@ -38,7 +38,7 @@ def set_tags(client: MlflowClient, run_id: str, tags: List[dict]) -> None:
         client.set_tag(run_id, **tag)
 
 
-def log_json_file(f:str) -> None:
+def log_json_file(f: str) -> None:
     data = load_json(f)
     logger.info('load json file: {}'.format(f))
 
