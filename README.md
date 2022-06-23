@@ -18,5 +18,9 @@ or
 export MLFLOW_EXPERIMENT_ID=
 
 # log metrics, params and tags from json file
-mlflow-log-cli -f examples/data.json
+mlflow-log-cli -f template.json
 ```
+
+## Templates
+
+[template.json]('template.json)

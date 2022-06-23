@@ -1,0 +1,42 @@
+{
+    "params": [
+        {
+            "key": "batch_size",
+            "value": "32"
+        },
+        {
+            "key": "lr",
+            "value": "0.001"
+        }
+    ],
+    "metrics": [
+        {
+            "key": "train_loss",
+            "value": 0.125,
+            "timestamp": 1656008755000,
+            "step": 1
+        },
+        {
+            "key": "train_loss",
+            "value": 0.6931471805599453,
+            "timestamp": 1656008756000,
+            "step": 2
+        },
+        {
+            "key": "train_loss",
+            "value": 1.0986122886681096,
+            "timestamp": 1656008757000,
+            "step": 3
+        }
+    ],
+    "tags": [
+        {
+            "key": "task",
+            "value": "classification"
+        },
+        {
+            "key": "type",
+            "value": "supervised"
+        }
+    ]
+}
