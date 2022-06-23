@@ -1,4 +1,3 @@
-import pytest
 from mlflow_log_cli.json_file import log_json_file
 
 
