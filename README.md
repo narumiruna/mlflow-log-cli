@@ -23,4 +23,4 @@ mlflow-log-cli -f template.json
 
 ## Templates
 
-[template.json]('template.json)
+[template.json](template.json)
