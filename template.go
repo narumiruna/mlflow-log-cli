@@ -24,7 +24,7 @@ type Tag struct {
 	Value string `json:"value"`
 }
 
-type MLflowLog struct {
+type MLflowData struct {
 	Params  []Param  `json:"params,omitempty"`
 	Metrics []Metric `json:"metrics,omitempty"`
 	Tags    []Tag    `json:"tags,omitempty"`
@@ -32,27 +32,27 @@ type MLflowLog struct {
 
 func main() {
 	params := []Param{
-		{Key: "key1", Value: "value1"},
-		{Key: "key2", Value: "value2"},
+		{Key: "batch_size", Value: "32"},
+		{Key: "lr", Value: "0.001"},
 	}
 
 	var metrics []Metric
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 10; i++ {
 		metric := Metric{
-			Key:       "log_x",
-			Value:     math.Log(float64(i) + 1),
-			Timestamp: time.Now().UnixMilli(),
+			Key:       "loss",
+			Value:     -math.Log(float64(i) + 1),
+			Timestamp: time.Now().Add(time.Duration(i) * time.Second).UnixMilli(),
 			Step:      int64(i),
 		}
 		metrics = append(metrics, metric)
 	}
 
 	tags := []Tag{
-		{Key: "key1", Value: "value1"},
-		{Key: "key2", Value: "value2"},
+		{Key: "task", Value: "classification"},
+		{Key: "type", Value: "supervised"},
 	}
 
-	data := MLflowLog{
+	data := MLflowData{
 		Params:  params,
 		Metrics: metrics,
 		Tags:    tags,
@@ -63,7 +63,7 @@ func main() {
 		panic(err)
 	}
 
-	err = ioutil.WriteFile("examples/data.json", bytes, 0644)
+	err = ioutil.WriteFile("template.json", bytes, 0644)
 	if err != nil {
 		panic(err)
 	}
