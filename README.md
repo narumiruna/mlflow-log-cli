@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-pip install .
+pip install mlflow-log-cli
 ```
 
 ## Usage
